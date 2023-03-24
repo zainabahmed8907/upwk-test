@@ -14,7 +14,8 @@ import Switch from "@mui/material/Switch";
 //styles of Appbar
 const useStyles = makeStyles((theme) => ({
   appbar: {
-    background: "black !important",
+        background: "black !important",
+      width:"100%"
   },
   rounded: {
     width: "30px",

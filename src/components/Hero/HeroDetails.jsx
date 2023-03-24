@@ -1,10 +1,24 @@
 import React from "react";
-import { Grid, Typography, Box, Button, Avatar } from "@mui/material";
+import {
+  Grid,
+  Typography,
+  Box,
+  Button,
+  Avatar,
+  List,
+  ListItem,
+  ListItemButton,
+  ListItemIcon,
+  ListItemText,
+  IconButton,
+} from "@mui/material";
 import { makeStyles } from "@material-ui/core";
 import FacebookRoundedIcon from "@mui/icons-material/FacebookRounded";
 import ArrowRightAltIcon from "@mui/icons-material/ArrowRightAlt";
 import "./Hero.css";
-import { Link } from "react-router-dom";
+import Person1 from "../../assets/images/person-1.jpg";
+import Person2 from "../../assets/images/person-2.jpg";
+import { ArrowRightAltRounded } from "@mui/icons-material";
 
 const useStyles = makeStyles((theme) => ({
   heading: {
@@ -16,7 +30,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: "white",
 
     marginTop: "210px",
-    marginLeft: "-100px",
+    marginLeft: "-60px",
   },
   fb: {
     backgroundColor: "white",
@@ -42,10 +56,40 @@ const useStyles = makeStyles((theme) => ({
   },
   go_btn: {
     width: "300px",
+    "@media screen and (max-width:550px)": {
+      position: "absolute",
+      zIndex: 1,
+    },
   },
   arrow_icon: {
     position: "relative",
     marginTop: "8px",
+  },
+  listContainer: {
+    marginLeft: "-220px",
+    "@media screen and (max-width:550px)": {
+      marginTop: "610px",
+      marginLeft: "-320px",
+      position: "absolute",
+      zIndex: 99,
+    },
+  },
+  icon2: {
+    marginLeft: "200px",
+    backgroundColor: "white",
+  },
+  list: {
+    width: "100%",
+    maxWidth: 200,
+    color: "white",
+    backgroundColor: "black",
+  },
+  arrow_right: {
+    color: "white",
+  },
+  listItemText: {
+    fontSize: "0.7em",
+    fontWeight: "200",
   },
 }));
 const HeroDetails = () => {
@@ -89,35 +133,88 @@ const HeroDetails = () => {
               We capture the fun and respect your privacy
             </Typography>
           </Box>
-          <Box
-            sx={{
-              display: {
-                md: "none",
-                sm: "block",
-              },
-            }}
-          >
-            <FacebookRoundedIcon
+          <Box>
+            <Box
               sx={{
-                display: "flex",
-                justifyContent: "center",
-                marginTop: "410px",
-                marginLeft: "-240px",
-                backgroundColor: "white",
+                display: {
+                  md: "block",
+                  sm: "none",
+                  xs: "none",
+                },
               }}
-            />
-          </Box>
-          <Box
-            sx={{
-              display: {
-                md: "block",
-                xs: "none",
-                sm: "none",
-                lg: "block",
-              },
-            }}
-          >
-            <FacebookRoundedIcon className={classes.icon} />
+            >
+              <FacebookRoundedIcon className={classes.icon} />
+            </Box>
+            <Box className={classes.listContainer}>
+              <Box
+                sx={{
+                  display: {
+                    md: "none",
+                    sm: "block",
+                    xs: "block",
+                  },
+                }}
+              >
+                {" "}
+                <FacebookRoundedIcon className={classes.icon2} />
+              </Box>
+
+              <List
+                component="nav"
+                aria-labelledby="nested-list-subheader"
+                className={classes.list}
+              >
+                <ListItem
+                  disablePadding
+                  secondaryAction={
+                    <IconButton edge="end" aria-label="comments">
+                      <ArrowRightAltRounded className={classes.arrow_right} />
+                    </IconButton>
+                  }
+                >
+                  <ListItemButton>
+                    <ListItemIcon>
+                      <Avatar alt="person1" src={Person1} />
+                    </ListItemIcon>
+
+                    <Box>
+                      <ListItemText
+                        primary="Establishnt"
+                        classes={{ primary: classes.listItemText }}
+                      />
+                      <ListItemText
+                        primary="Le Bajo"
+                        classes={{ primary: classes.listItemText }}
+                      />
+                    </Box>
+                  </ListItemButton>
+                </ListItem>
+                <ListItem
+                  disablePadding
+                  secondaryAction={
+                    <IconButton edge="end" aria-label="comments">
+                      <ArrowRightAltRounded className={classes.arrow_right} />
+                    </IconButton>
+                  }
+                >
+                  <ListItemButton>
+                    <ListItemIcon>
+                      <Avatar alt="Remy Sharp" src={Person2} />
+                    </ListItemIcon>
+                    <Box>
+                      <ListItemText
+                        primary="Shot By"
+                        classes={{ primary: classes.listItemText }}
+                      />
+                      <ListItemText
+                        primary="Jamie "
+                        classes={{ primary: classes.listItemText }}
+                      />
+                    </Box>
+                  </ListItemButton>
+                </ListItem>
+              </List>
+            </Box>
           </Box>
         </Grid>
       </div>
@@ -133,14 +230,12 @@ const HeroDetails = () => {
           </Typography>
         </Box>
         <Box>
-          <Link to="/picture-details">
-            <Button variant="contained" className={classes.go_btn}>
-              Go{" "}
-              <span className={classes.arrow_icon}>
-                <ArrowRightAltIcon />
-              </span>
-            </Button>
-          </Link>
+          <Button variant="contained" className={classes.go_btn}>
+            Go{" "}
+            <span className={classes.arrow_icon}>
+              <ArrowRightAltIcon />
+            </span>
+          </Button>
         </Box>
       </Box>
     </>

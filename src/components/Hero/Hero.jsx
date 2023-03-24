@@ -133,7 +133,7 @@ const Hero = () => {
           </Typography>
         </Box>
         <Box>
-          <Link to="/picture-details">
+          <Link to="/picture">
             <Button variant="contained" className={classes.go_btn}>
               Go{" "}
               <span className={classes.arrow_icon}>

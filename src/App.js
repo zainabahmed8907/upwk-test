@@ -1,21 +1,18 @@
 import React from "react";
-import { Route, Router, Routes,} from "react-router-dom";
+import { Route, BrowserRouter, Routes } from "react-router-dom";
 import Home from "./Screens/Home";
 import PictureDetails from "./Screens/PictureDetails";
 
-
 function App() {
   return (
-    <React.StrictMode>
+    <BrowserRouter>
       <div className="App">
-        <Home />
-        <Router>
-          <Routes>
-            <Route  path="/picture-details" element={<PictureDetails />} />
-          </Routes>
-        </Router>
+        <Routes>
+          <Route exact path="/" element={<Home />} />
+          <Route exact path="picture" element={<PictureDetails />} />
+        </Routes>
       </div>
-    </React.StrictMode>
+    </BrowserRouter>
   );
 }
 
