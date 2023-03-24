@@ -8,29 +8,8 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
 
-import { makeStyles } from "@material-ui/core";
 import Switch from "@mui/material/Switch";
-
-//styles of Appbar
-const useStyles = makeStyles((theme) => ({
-  appbar: {
-        background: "black !important",
-      width:"100%"
-  },
-  rounded: {
-    width: "30px",
-    height: "30px",
-    border: "8px solid white",
-    borderRadius: "50%",
-  },
-  buttons: {
-    margin: "5px",
-  },
-  switch: {
-    position: "relative",
-    marginTop: "12px",
-  },
-}));
+import { useStyles } from "./styles";
 
 function ResponsiveAppBar() {
   const [anchorElNav, setAnchorElNav] = useState(null);
@@ -85,6 +64,7 @@ function ResponsiveAppBar() {
               }}
               open={Boolean(anchorElNav)}
               onClose={handleCloseNavMenu}
+              className={classes.mobileMenu}
               sx={{
                 display: { xs: "block", md: "none" },
               }}

@@ -1,53 +1,12 @@
 import React from "react";
-import { Grid, Typography, Box, Button, Avatar } from "@mui/material";
-import { makeStyles } from "@material-ui/core";
-import FacebookRoundedIcon from "@mui/icons-material/FacebookRounded";
+import { Grid, Typography, Box, Button } from "@mui/material";
 import ArrowRightAltIcon from "@mui/icons-material/ArrowRightAlt";
+import {InfoRounded } from "@mui/icons-material";
 import "./Hero.css";
 import { Link } from "react-router-dom";
+import { useStyles } from "./styles/styles";
 
-const useStyles = makeStyles((theme) => ({
-  heading: {
-    color: "white",
-    position: "relative",
-    top: "300px",
-  },
-  icon: {
-    backgroundColor: "white",
 
-    marginTop: "210px",
-    marginLeft: "-100px",
-  },
-  fb: {
-    backgroundColor: "white",
-    display: "flex",
-    justifyContent: "center",
-  },
-  findPictures: {
-    backgroundColor: "black",
-    height: "100px",
-    padding: "20px",
-    display: "flex",
-    justifyContent: "space-between",
-    width: "100%",
-    flexWrap: "wrap",
-    "@media screen and (max-width:550px)": {
-      justifyContent: "center",
-    },
-  },
-  pictures_heading: {
-    fontWeight: "bold",
-    fontSize: "20rem",
-    color: "white",
-  },
-  go_btn: {
-    width: "300px",
-  },
-  arrow_icon: {
-    position: "relative",
-    marginTop: "8px",
-  },
-}));
 const Hero = () => {
   const classes = useStyles();
 
@@ -97,7 +56,7 @@ const Hero = () => {
               },
             }}
           >
-            <FacebookRoundedIcon
+            <InfoRounded
               sx={{
                 display: "flex",
                 justifyContent: "center",
@@ -117,7 +76,7 @@ const Hero = () => {
               },
             }}
           >
-            <FacebookRoundedIcon className={classes.icon} />
+            <InfoRounded className={classes.icon} />
           </Box>
         </Grid>
       </div>

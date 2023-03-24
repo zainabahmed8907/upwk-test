@@ -12,86 +12,14 @@ import {
   ListItemText,
   IconButton,
 } from "@mui/material";
-import { makeStyles } from "@material-ui/core";
-import FacebookRoundedIcon from "@mui/icons-material/FacebookRounded";
+import { InfoRounded } from "@mui/icons-material";
+
 import ArrowRightAltIcon from "@mui/icons-material/ArrowRightAlt";
 import "./Hero.css";
 import Person1 from "../../assets/images/person-1.jpg";
 import Person2 from "../../assets/images/person-2.jpg";
 import { ArrowRightAltRounded } from "@mui/icons-material";
-
-const useStyles = makeStyles((theme) => ({
-  heading: {
-    color: "white",
-    position: "relative",
-    top: "300px",
-  },
-  icon: {
-    backgroundColor: "white",
-
-    marginTop: "210px",
-    marginLeft: "-60px",
-  },
-  fb: {
-    backgroundColor: "white",
-    display: "flex",
-    justifyContent: "center",
-  },
-  findPictures: {
-    backgroundColor: "black",
-    height: "100px",
-    padding: "20px",
-    display: "flex",
-    justifyContent: "space-between",
-    width: "100%",
-    flexWrap: "wrap",
-    "@media screen and (max-width:550px)": {
-      justifyContent: "center",
-    },
-  },
-  pictures_heading: {
-    fontWeight: "bold",
-    fontSize: "20rem",
-    color: "white",
-  },
-  go_btn: {
-    width: "300px",
-    "@media screen and (max-width:550px)": {
-      position: "absolute",
-      zIndex: 1,
-    },
-  },
-  arrow_icon: {
-    position: "relative",
-    marginTop: "8px",
-  },
-  listContainer: {
-    marginLeft: "-220px",
-    "@media screen and (max-width:550px)": {
-      marginTop: "610px",
-      marginLeft: "-320px",
-      position: "absolute",
-      zIndex: 99,
-    },
-  },
-  icon2: {
-    marginLeft: "200px",
-    backgroundColor: "white",
-  },
-  list: {
-    width: "100%",
-    maxWidth: 200,
-    color: "white",
-    backgroundColor: "black",
-  },
-  arrow_right: {
-    color: "white",
-  },
-  listItemText: {
-    fontSize: "0.7em",
-    fontWeight: "200",
-  },
-}));
+import { useStyles } from "./styles/detailstyles";
 const HeroDetails = () => {
   const classes = useStyles();
 
@@ -143,7 +71,7 @@ const HeroDetails = () => {
                 },
               }}
             >
-              <FacebookRoundedIcon className={classes.icon} />
+              <InfoRounded className={classes.icon} />
             </Box>
             <Box className={classes.listContainer}>
               <Box
@@ -156,7 +84,7 @@ const HeroDetails = () => {
                 }}
               >
                 {" "}
-                <FacebookRoundedIcon className={classes.icon2} />
+                <InfoRounded className={classes.icon2} />
               </Box>
 
               <List
